@@ -42,7 +42,7 @@ def main():
         sqlquery=f"""insert into book(book_id,author,title,price,publish_date,description) values('{book_id}','{author}','{title}','{price}','{publish_date}','{description}');""" 
         print(sqlquery)
         db = SQLSERVER()
-        db.execute_query(sqlquery)
+        db.insert_query(sqlquery)
 
 if __name__=='__main__':
     main()
