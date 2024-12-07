@@ -9,10 +9,13 @@ def main():
 
         author_name = input("Enter author name: ")
         sqlquery = f"SELECT * FROM book WHERE author = '{author_name}'"
-    else:
+    elif option == 2:
 
         book_name = input("Enter book name: ")
         sqlquery = f"SELECT * FROM book WHERE title = '{book_name}'"
+    else:
+
+        sqlquery= f"SELECT * FROM book"    
 
     
     print(sqlquery)

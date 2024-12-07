@@ -43,9 +43,17 @@ class SQLSERVER:
 
             self.cursor.execute(query)
 
+            # Fetch the results and convert them to a list of dictionaries
+            columns = [column[0] for column in self.cursor.description]  # Get column names
+            rows = self.cursor.fetchall()
+ 
+            # Convert rows to dictionaries using column names
+            result_dict = [dict(zip(columns, row)) for row in rows]
+            return result_dict
+
             # Step 4: Fetch and process results
-            rows = self.cursor.fetchall()  # Fetch all rows that match the query
-            return rows
+            ##rows = self.cursor.fetchall()  # Fetch all rows that match the query
+            ##return rows
             #for row in rows:
                 #print(row)  # Print each row
 
